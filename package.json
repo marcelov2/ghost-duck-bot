@@ -1,10 +1,10 @@
 {
-  "name": "basic-template",
+  "name": "ghost-duck-bot",
   "version": "1.0.0",
-  "description": "Basic configuration for nodejs webpack typescript development",
+  "description": "A bot for nodejs",
   "scripts": {
-    "build": "cross-env-file .env.prod.json webpack --mode=production --config webpack/config.prod.js",
-    "dev": "cross-env-file .env.dev.json webpack --mode=development  --config webpack/config.dev.js --watch",
+    "build": "cross-env-file -p .env.prod.json webpack --mode=production --config webpack/config.prod.js",
+    "dev": "cross-env-file -p .env.dev.json webpack --mode=development  --config webpack/config.dev.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node build/main.js"
   },
@@ -27,5 +27,8 @@
     "webpack": "^5.4.0",
     "webpack-cli": "^4.2.0",
     "webpack-node-externals": "^2.5.2"
+  },
+  "dependencies": {
+    "discord.js": "^12.4.1"
   }
 }
