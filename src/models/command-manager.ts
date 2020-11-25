@@ -1,70 +1,53 @@
 import { Message } from "discord.js";
 
-import { reactToContentCommands, prefixedCommands } from "../commands/command-list";
-import { BotCommand } from "../interfaces/bot-command";
-import { ReactToContentCommand } from "../interfaces/react-to-content-command";
+import { BotCommand } from "../abstracts/bot-command";
+import { HelpCommand } from '../commands/help-command'
+import { GhostCommand } from '../commands/ghost-command'
+import { OwoCommand } from '../commands/owo-command'
+import { UwuCommand } from '../commands/uwu-command'
 
 export class CommandManager {
-    private readonly prefix: string;
-    private reactToContentCommands: ReactToContentCommand[] = reactToContentCommands;
-    private prefixedCommands: BotCommand[] = prefixedCommands;
+  private readonly prefix: string;
 
-    constructor(prefix: string){
-        this.prefix = prefix;
-        this.generateHelpCommand();
+  private reactions: BotCommand[] = [
+    new OwoCommand(),
+    new UwuCommand()
+  ];
 
-    };
+  private prefixedCommands: BotCommand[] = [
+    new GhostCommand()
+  ];
 
-    public process(message: Message): void {
-        if (message.content.startsWith(this.prefix)) {
-            message.content = message.content.substring(this.prefix.length);
-            this.execPrefixedCommand(message);
-        } else {
-            this.execReactToContentCommand(message);
-        }
+  constructor(prefix: string){
+    this.prefix = prefix;
+    this.generateHelpCommand();
+  };
+
+  public process(message: Message): void {
+    if(message.author.bot) return;
+
+    if (message.content.startsWith(this.prefix)) {
+      message.content = message.content.substring(this.prefix.length);
+      this.execCommandFor(message, this.prefixedCommands);
+    } else {
+      this.execCommandFor(message, this.reactions);
     }
+  }
 
-    public execPrefixedCommand(message: Message): void {
-        for (let command of this.prefixedCommands) {
-            if (message.content === command.name) {
-                command.exec(message);    
-            }
-        }
+  public execCommandFor(message: Message, commands : BotCommand[]): void {
+    for (let command of commands) {
+      if(command.shouldExec(message)){
+        command.exec(message);
+        break;
+      }
     }
+  }
 
-    public execReactToContentCommand(message: Message): void {
-        for (let command of this.reactToContentCommands) {
-            if (message.content.match(command.pattern)) {
-                command.exec(message);
-            }
-        }
-    }
+  private generateHelpCommand(): void {
 
-    private generateHelpCommand(): void {
-        let help: BotCommand = {
-            name: 'help',
-            description: "Te muestro lo que puedo hacer",
-            exec: function (_msg: Message) { } 
-        }
+    let helpCommand = new HelpCommand(this.prefix, this.prefixedCommands, this.reactions)
+    this.prefixedCommands.push(helpCommand);
 
-        this.prefixedCommands.push(help);
+  }
 
-        let helpMessage = `podes usar los siguientes comandos, si cuando escribis les pones adelante un "${this.prefix}":\n`;
-        helpMessage = this.concatCommandsToHelpMessage(this.prefixedCommands, helpMessage);
-        helpMessage = helpMessage.concat(`\nAdemás, tengo las siguientes reacciones:\n`);
-        helpMessage = this.concatCommandsToHelpMessage(this.reactToContentCommands, helpMessage);
-        
-        help.exec = (message: Message) => {
-                message.reply(helpMessage);
-        }
-
-    }
-
-    private concatCommandsToHelpMessage(commandList: BotCommand[], helpMessage: string): string {
-        for (let command of commandList) {
-            helpMessage = helpMessage.concat(`\t**${command.name}**:\t${command.description}\n`);
-        }
-        return helpMessage;
-    }
-    
 }
