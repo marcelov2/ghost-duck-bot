@@ -2,7 +2,7 @@
 
 ## Commands
 
- command | parameters | description |
+| command | parameters | description |
 |--------|------------|-------------|
 | help | None | It will tell you all I can do |
 | ghost | ghost_type | It will give you information about ghost_type ghost that could be useful during a phasmophobia ghost hunt |
