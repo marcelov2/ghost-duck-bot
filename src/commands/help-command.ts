@@ -7,15 +7,15 @@ export class HelpCommand extends BotCommand {
   private helpText: string = '';
 
   constructor(prefix: string, prefixedCommands: BotCommand[], reactions: BotCommand[]) {
-    super('help', 'Te muestro lo que puedo hacer')
+    super('help', 'I will show you everything I can do')
 
-    this.helpText = `podes usar los siguientes comandos, si cuando escribis les pones adelante un punto ("${prefix}"):\n`;
+    this.helpText = `you can use any of the following commands by prefixing a "${prefix}" before them:\n`;
     this.addDescription(this);
 
     this.addDescriptionBatch(prefixedCommands);
 
-    this.helpText = this.helpText.concat(`\nAdemás, tengo las siguientes reacciones:\n`);
-    this.addDescriptionBatch(reactions);
+    this.helpText = this.helpText.concat(`\nI also can react to some of your messages with gifs if they contain some of the following strings (or similiar):\n`);
+    this.addReactionBatch(reactions);
 
   }
 
@@ -45,6 +45,12 @@ export class HelpCommand extends BotCommand {
   }
 
   private addDescription(command: BotCommand){
-    this.helpText = this.helpText.concat(`\t**${command.name}**:\n\t\t${command.description}\n`)
+    this.helpText = this.helpText.concat(`\t**${command.name}**:\n\t\t${command.description}\n\n`);
+  }
+
+  private addReactionBatch(reactions: BotCommand[]){
+    for(let reaction of reactions){
+      this.helpText = this.helpText.concat(`\t\t* "${reaction.name}"\n`);
+    }
   }
 }

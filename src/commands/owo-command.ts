@@ -5,7 +5,7 @@ import { BotCommand } from "../abstracts/bot-command";
 export class OwoCommand extends BotCommand {
 
   constructor() {
-    super("owo", `cada vez que alguien ponga "owo"  (o algo parecido) en un mensaje voy a mandar un gif`)
+    super("owo", "")
   }
 
   shouldExec(message: Message): boolean {

@@ -5,7 +5,7 @@ import { BotCommand } from "../abstracts/bot-command";
 export class UwuCommand extends BotCommand {
 
   constructor()   {
-    super("uwu", `cada vez que alguien ponga "uwu"  (o algo parecido) en un mensaje voy a mandar un gif`)
+    super("uwu", "")
   }
 
   shouldExec(message: Message): boolean {

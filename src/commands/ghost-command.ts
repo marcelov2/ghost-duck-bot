@@ -9,7 +9,7 @@ export class GhostCommand extends BotCommand {
   private phasmoDataService: PhasmoDataService;
 
   constructor(){
-    super("ghost", `Te doy información sobre el tipo de fantasma que me pases como parámetro`, ['ghost_type']);
+    super("ghost", `I will give you information about the ghost type *ghost_type* that could be useful during a phasmophobia ghost hunt`, ['ghost_type']);
     this.phasmoDataService = new PhasmoDataService();
   }
 
@@ -51,7 +51,7 @@ export class GhostCommand extends BotCommand {
         { name: 'Weakness', value: ghostType.weakness },
         { name: 'Details', value: ghostType.details},
       )
-      .setFooter('Tu vieja es tan fea que la usaron como referencia para los fantasmas de phasmophobia ', 'https://store-images.s-microsoft.com/image/apps.10672.14459324830184757.115b4ae2-cd13-432d-afb1-065cbec4bc76.dda75efc-b359-434e-8a3a-c986f1ccbc23?mode=scale&q=90&h=200&w=200&background=%23FFFFFF');
+      .setFooter('Be careful and good hunt!', 'https://i.ibb.co/Mc7XYj0/Image001.png');
 
     return message;
   }
