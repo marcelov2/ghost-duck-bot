@@ -1,27 +1,25 @@
 import { Message } from "discord.js";
 
-export abstract class BotCommand{
+export abstract class BotCommand {
 
-    private _name: string;
-    private _description: string;
-    private _parameters: string[] | undefined;
+    public readonly name: string;
+    public description: string[];
+    public readonly parameters: string[] | undefined;
 
-    constructor(name: string, description: string, parameters?: string[]) {
-        this._name = name;
-        this._description = description;
-        this._parameters = parameters;
+    constructor(name: string, description?: string[] , parameters?: string[]) {
+        this.name = name;
+        this.description = description ? description : [];
+        this.parameters = parameters;
     }
 
-    get name() {
-        return this._name;
+    public addLineToDescription(line: string): void {
+        this.description.push(line);
     }
 
-    get description() {
-        return this._description;
-    }
-
-    get parameters() {
-        return this._parameters;
+    public formattedDescription(prefixedTabs: number): string {
+        let multipleTabs = '\t'.repeat(prefixedTabs);
+        let result = this.description.reduce((current, line) => current.concat(`${multipleTabs}${line}\n`), '')
+        return result;
     }
 
     public abstract shouldExec(message: Message): boolean;

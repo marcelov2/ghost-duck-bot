@@ -1,28 +1,38 @@
 import { Message } from "discord.js";
 
 import { BotCommand } from "../abstracts/bot-command";
-import { HelpCommand } from '../commands/help-command'
-import { GhostCommand } from '../commands/ghost-command'
 import { AwaCommand } from '../commands/awa-command'
+import { CluesCommand } from "../commands/clues-command";
+import { GhostCommand } from '../commands/ghost-command'
+import { HelpCommand } from '../commands/help-command'
 import { OwoCommand } from '../commands/owo-command'
 import { UwuCommand } from '../commands/uwu-command'
+import { PhasmoDataService } from "../services/phasmo-data";
 
 export class CommandManager {
-  private readonly prefix: string;
+  public readonly prefix: string;
+  public readonly reactions: BotCommand[];
+  public readonly prefixedCommands: BotCommand[];
 
-  private reactions: BotCommand[] = [
-    new AwaCommand(),
-    new OwoCommand(),
-    new UwuCommand()
-  ];
-
-  private prefixedCommands: BotCommand[] = [
-    new GhostCommand()
-  ];
+  private readonly phasmoDataService: PhasmoDataService;
 
   constructor(prefix: string){
     this.prefix = prefix;
-    this.generateHelpCommand();
+
+    this.phasmoDataService = new PhasmoDataService();
+
+    this.prefixedCommands = [
+      new HelpCommand(this),
+      new GhostCommand(this.phasmoDataService),
+      new CluesCommand(this.phasmoDataService),
+    ];
+
+    this.reactions = [
+      new AwaCommand(),
+      new OwoCommand(),
+      new UwuCommand()
+    ];
+
   };
 
   public process(message: Message): void {
@@ -44,12 +54,4 @@ export class CommandManager {
       }
     }
   }
-
-  private generateHelpCommand(): void {
-
-    let helpCommand = new HelpCommand(this.prefix, this.prefixedCommands, this.reactions)
-    this.prefixedCommands.push(helpCommand);
-
-  }
-
 }

@@ -4,4 +4,5 @@ export interface GhostType {
   weakness: string;
   strength: string;
   details: string;
+  advice: string;
 }

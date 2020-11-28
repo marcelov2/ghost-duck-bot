@@ -5,7 +5,7 @@ import { BotCommand } from "../abstracts/bot-command";
 export class UwuCommand extends BotCommand {
 
   constructor()   {
-    super("uwu", "")
+    super("uwu");
   }
 
   shouldExec(message: Message): boolean {

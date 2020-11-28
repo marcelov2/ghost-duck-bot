@@ -1,22 +1,19 @@
 import { Message } from 'discord.js';
 
 import { BotCommand } from '../abstracts/bot-command'
+import { StringFormatter } from '../helpers/string-formatter';
+import { CommandManager } from '../models/command-manager';
 
 export class HelpCommand extends BotCommand {
 
-  private helpText: string = '';
+  private readonly commandManager: CommandManager;
 
-  constructor(prefix: string, prefixedCommands: BotCommand[], reactions: BotCommand[]) {
-    super('help', 'I will show you everything I can do')
+  private helpText: string;
 
-    this.helpText = `~~pedile ayuda a tu vieja~~ you can use any of the following commands by prefixing a "${prefix}" before them:\n`;
-    this.addDescription(this);
-
-    this.addDescriptionBatch(prefixedCommands);
-
-    this.helpText = this.helpText.concat(`\nI also can react to some of your messages with gifs if they contain some of the following strings (or similiar):\n`);
-    this.addReactionBatch(reactions);
-
+  constructor(commandManager: CommandManager) {
+    super('help', ['I will show you everything I can do']);
+    this.commandManager = commandManager;
+    this.helpText=''
   }
 
   shouldExec(message: Message): boolean {
@@ -24,28 +21,39 @@ export class HelpCommand extends BotCommand {
   }
 
   exec(message: Message): void {
-    message.reply(this.helpText);
+    this.helpText = StringFormatter.format('pedile ayuda a tu vieja', ['strikethrough']);
+    this.helpText = `${this.helpText} you can use any of the following commands by prefixing a "${this.commandManager.prefix}" before them:\n`;
+    this.addDescriptionBatch(this.commandManager.prefixedCommands);
+
+    this.helpText = this.helpText.concat(`\nI also react to some of your messages by sending a gif if they contain some of the following strings (or similiar):\n`);
+    this.addReactionBatch(this.commandManager.reactions);
+    message.reply(this.helpText, {
+      split: true
+    });
   }
 
   private addDescriptionBatch(commandList: BotCommand[]): void {
     for (let command of commandList) {
-      let commandHelpText = `\t**${command.name}**`;
-
-      if(command.parameters){
-        let parameters = command.parameters?.map((parameter) => {
-          return `*${parameter}*`
-        }).join(' ');
-
-        commandHelpText = `${commandHelpText} ${parameters}`;
-      }
-
-      commandHelpText = `${commandHelpText}: \n\t\t${command.description}\n`;
-      this.helpText = this.helpText.concat(commandHelpText);
+      this.addDescription(command);
     }
   }
 
   private addDescription(command: BotCommand){
-    this.helpText = this.helpText.concat(`\t**${command.name}**:\n\t\t${command.description}\n\n`);
+    let boldCommandName = StringFormatter.format(command.name, ['bold']);
+    let commandHelpText = `\t${boldCommandName}`;
+
+    if(command.parameters){
+      let parameters = command.parameters?.map((parameter) => {
+        return StringFormatter.format(parameter, ['italic']);
+      }).join(' ');
+
+      commandHelpText = commandHelpText.concat(`  ${parameters}`);
+    }
+
+    commandHelpText = commandHelpText.concat(`:\n`);
+    commandHelpText = commandHelpText.concat(command.formattedDescription(2));
+
+    this.helpText = this.helpText.concat(`${commandHelpText}\n`);
   }
 
   private addReactionBatch(reactions: BotCommand[]){

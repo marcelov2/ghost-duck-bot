@@ -5,12 +5,12 @@ import { BotCommand } from "../abstracts/bot-command";
 export class OwoCommand extends BotCommand {
 
   constructor() {
-    super("owo", "")
+    super("owo");
   }
 
   shouldExec(message: Message): boolean {
     let matches = message.content.match( /^.*o+[ ]*w+[ ]*o+.*$/i);
-    return  matches !== null
+    return  matches !== null;
   }
 
   exec(message: Message): void {
