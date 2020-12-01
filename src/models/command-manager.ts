@@ -3,6 +3,7 @@ import { Message } from "discord.js";
 import { BotCommand } from "../abstracts/bot-command";
 import { HelpCommand } from '../commands/help-command'
 import { GhostCommand } from '../commands/ghost-command'
+import { AwaCommand } from '../commands/awa-command'
 import { OwoCommand } from '../commands/owo-command'
 import { UwuCommand } from '../commands/uwu-command'
 
@@ -10,6 +11,7 @@ export class CommandManager {
   private readonly prefix: string;
 
   private reactions: BotCommand[] = [
+    new AwaCommand(),
     new OwoCommand(),
     new UwuCommand()
   ];

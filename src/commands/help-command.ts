@@ -9,7 +9,7 @@ export class HelpCommand extends BotCommand {
   constructor(prefix: string, prefixedCommands: BotCommand[], reactions: BotCommand[]) {
     super('help', 'I will show you everything I can do')
 
-    this.helpText = `you can use any of the following commands by prefixing a "${prefix}" before them:\n`;
+    this.helpText = `~~pedile ayuda a tu vieja~~ you can use any of the following commands by prefixing a "${prefix}" before them:\n`;
     this.addDescription(this);
 
     this.addDescriptionBatch(prefixedCommands);

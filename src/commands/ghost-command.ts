@@ -51,7 +51,7 @@ export class GhostCommand extends BotCommand {
         { name: 'Weakness', value: ghostType.weakness },
         { name: 'Details', value: ghostType.details},
       )
-      .setFooter('Be careful and good hunt!', 'https://i.ibb.co/Mc7XYj0/Image001.png');
+      .setFooter('Tu vieja es tan fea que la usaron de referencia para los fantasmas de phasmophobia', 'https://store-images.s-microsoft.com/image/apps.10672.14459324830184757.115b4ae2-cd13-432d-afb1-065cbec4bc76.dda75efc-b359-434e-8a3a-c986f1ccbc23?mode=scale&q=90&h=270&w=270&background=%23FFFFFF');
 
     return message;
   }
