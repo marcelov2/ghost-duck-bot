@@ -20,7 +20,7 @@ export class GhostCommand extends BotCommand {
   async exec(message: Message): Promise<any> {
     let args = message.content.split(' ');
 
-    if(args.length < 2) message.reply('tenés que decirme cual fantasma querés ');
+    if(args.length < 2) message.reply('tenés que decirme qué fantasma querés ');
     else {
       let ghostType = await this.phasmoDataService.getPhantomType(args[1].toLowerCase());
       let reply: string | MessageEmbed = "La cagaste amig@, no hay ningún fantasma que se llame asi";
