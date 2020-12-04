@@ -10,7 +10,7 @@ export class CluesCommand extends BotCommand {
 
   constructor(phasmoDataService: PhasmoDataService) {
     super("clues",
-    ["Given a comma separated set of evidences, I will tell you all possible ghost types that you could be dealing with. The evidence can be any of the following, you may use its short name (which is shown between paranthesis):"],
+    ["Given a space separated set of evidences, I will tell you all possible ghost types that you could be dealing with. The evidence can be any of the following, you may use its short name (which is shown between paranthesis):"],
     ['clue_list']);
 
     this.phasmoDataService = phasmoDataService;
