@@ -26,9 +26,9 @@ By default, all the commands of this bot must be prefixed with a point ("."). It
 
 ### Reaction
 It also read all of the messages you send to server searching for the following strings (or similiar):
-        * "awa"
-        * "owo"
-        * "uwu"
+   * "awa"
+   * "owo"
+   * "uwu"
  
  If it find one of them it will send a gif.
  
