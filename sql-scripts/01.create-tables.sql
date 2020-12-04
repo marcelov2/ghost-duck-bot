@@ -90,7 +90,7 @@
     -- FILL EVIDENCE TABLE
     INSERT INTO phasmo.evidence(name, short_name) VALUES
         ('Ghost Orb', 'orb'),
-        ('Spirit Box', 'radio'),
+        ('Spirit Box', 'box'),
         ('Fingerprints', 'prints'),
         ('EMF Level 5', 'emf'),
         ('Freezing Temperatures', 'freeze'),
