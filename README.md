@@ -1,4 +1,4 @@
-# Ghost Duck Bot: A bot for Discord that could help you in your phasmophobia hunts
+# Ghost Duck Bot: A bot for Discord
 ## About
 ### Commands
 By default, all the commands of this bot must be prefixed with a point ("."). It has 3 commands:
