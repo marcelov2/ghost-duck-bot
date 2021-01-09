@@ -3,13 +3,14 @@ import { Message } from "discord.js";
 import { BotCommand } from "../abstracts/bot-command";
 import { AwaCommand } from '../commands/awa-command'
 import { CluesCommand } from "../commands/clues-command";
-import { GhostCommand } from '../commands/ghost-command'
-import { HelpCommand } from '../commands/help-command'
-import { OwoCommand } from '../commands/owo-command'
-import { UwuCommand } from '../commands/uwu-command'
-import { SiCommand } from '../commands/si-command'
-import { NoCommand } from '../commands/no-command'
-
+import { EweCommand } from '../commands/ewe-command';
+import { IwiCommand } from '../commands/iwi-command';
+import { GhostCommand } from '../commands/ghost-command';
+import { HelpCommand } from '../commands/help-command';
+import { NoCommand } from '../commands/no-command';
+import { OwoCommand } from '../commands/owo-command';
+import { SiCommand } from '../commands/si-command';
+import { UwuCommand } from '../commands/uwu-command';
 import { PhasmoDataService } from "../services/phasmo-data";
 
 export class CommandManager {
@@ -32,6 +33,8 @@ export class CommandManager {
 
     this.reactions = [
       new AwaCommand(),
+      new EweCommand(),
+      new IwiCommand(),
       new OwoCommand(),
       new UwuCommand(),
       new SiCommand(),
