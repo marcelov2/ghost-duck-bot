@@ -9,7 +9,7 @@ export class CluesCommand extends BotCommand {
   private readonly phasmoDataService: PhasmoDataService;
 
   constructor(phasmoDataService: PhasmoDataService) {
-    super("clues",
+    super("evi",
     ["Dado um conjunto de evidências separadas por espaço, direi todos os tipos possíveis de fantasmas com os quais você poderia estar lidando. A evidência pode ser qualquer uma das seguintes, você pode usar seu nome curto (que é mostrado entre parênteses):"],
     ['clue_list']);
 
