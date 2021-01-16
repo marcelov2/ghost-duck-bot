@@ -3,7 +3,7 @@
 
   UPDATE phasmo.ghost_type SET
     advice = 'O mais comum dos fantasmas, mas ainda assim poderoso e perigoso. Normalmente encontrado em um de seus locais de caçada depois de uma morte não explicada.'::text
-  WHERE name='espirito';
+  WHERE name='spirit';
 
   UPDATE phasmo.ghost_type SET
     advice = 'Um dos fantasmas mais perigosos e também o único até o momento que pode voar, sendo até mesmo capaz de atravessar paredes.'::text
@@ -11,7 +11,7 @@
 
   UPDATE phasmo.ghost_type SET
     advice = 'Podem possuir os vivos, comumente invocado com um tabuleiro de Ouija e pode causar medo naqueles em volta.'::text
-  WHERE name='espectro';
+  WHERE name='Phantom';
 
   UPDATE phasmo.ghost_type SET
     advice = 'Pode manipular objetos em volta para causar medo.'::text
@@ -35,11 +35,11 @@
 
   UPDATE phasmo.ghost_type SET
     advice = 'Não ataca quando há mais de uma pessoa perto, mas isso faz com que seja difícil o encontrar em grupo.'::text
-  WHERE name='assombração';
+  WHERE name='shade';
 
   UPDATE phasmo.ghost_type SET
     advice = 'O Demônio é um dos piores para enfrentar, por ser extremamente agressivo e caçar com maior frequência, portanto é recomendado carregar um crucifixo. Para compensar, usar um tabuleiro de Ouija não drena sanidade.'::text
-  WHERE name='demonio';
+  WHERE name='demon';
 
   UPDATE phasmo.ghost_type SET
     advice = 'O fantasma que mais rápido drena a sanidade dos jogadores, mas manchar a sala em que ele está o impede de sair.'::text
