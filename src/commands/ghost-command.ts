@@ -10,7 +10,7 @@ export class GhostCommand extends BotCommand {
   private phasmoDataService: PhasmoDataService;
 
   constructor(phasmoDataService: PhasmoDataService) {
-    super("ghost", [`Vou lhe dar informações sobre o tipo de fantasma *ghost_type* que pode ser útil durante uma caça a fantasmas por phasmofobia`], ['ghost_type']);
+    super("fan", [`Vou lhe dar informações sobre o tipo de fantasma *fan_type* que pode ser útil durante uma caça a fantasmas por phasmofobia`], ['fan_type']);
 
     this.phasmoDataService = phasmoDataService;
     this.addLineToDescription("Estes são os tipos de fantasmas que conheço:");
