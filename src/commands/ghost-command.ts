@@ -76,7 +76,7 @@ export class GhostCommand extends BotCommand {
         { name: 'Fraqueza', value: ghostType.weakness },
         { name: 'Detalhes', value: ghostType.details},
       )
-      .setFooter('Sua velha é tão feia que a usaram como referência para os fantasmas da phasmofobia', 'https://media1.tenor.com/images/0b89c514e6a00b9c795e2176c366a3e7/tenor.gif?itemid=15579723');
+      .setFooter('Sua velha é tão feia que a usaram como referência para os fantasmas da phasmofobia');
 
     return message;
   }
