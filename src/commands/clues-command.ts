@@ -39,7 +39,8 @@ export class CluesCommand extends BotCommand {
     if (args.length === 0) {
       message.channel.send('Vá em frente, criatura, receba uma dica (ou melhor, duas) antes de pedir ajuda.  ')
     } else if(args.length === 1) {
-      message.channel.send('Bem, apenas uma pista? sou um bot e nao um Xamã. https://i.pinimg.com/originals/9f/47/48/9f47487e412947f654b8036666ad0473.gif ');
+      message.channel.send('Bem, apenas uma pista? sou um bot e nao um Xamã.');
+      message.channel.send("https://i.pinimg.com/originals/9f/47/48/9f47487e412947f654b8036666ad0473.gif");
       this.replyWithoutAdvice(message, args[0]);
     } else {
       this.replyWithAdvice(message, args);
