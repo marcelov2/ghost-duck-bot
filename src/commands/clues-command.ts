@@ -76,9 +76,9 @@ export class CluesCommand extends BotCommand {
 
   private renderSimpleListEmbed(ghosts: GhostType[], evidences: string[][]): MessageEmbed {
     let message = new MessageEmbed().setColor('#666666')
-      .setTitle('Aqui você tem uma lista do que poderia ser')
     message.channel.send("https://4.bp.blogspot.com/-DvM9k9cWfzQ/Vze5o0-QRQI/AAAAAAAAArw/BJSiYEzWWOkX6B50Q25L1ZHvWn2X7VIigCLcB/s640/gifs-assustadores-1.gif");
-      .addFields([
+      .setTitle('Aqui você tem uma lista do que poderia ser')
+          .addFields([
         { name: "Fantasma", value:'\u200b', inline: true},
         { name: "Evidência ausente 0", value:'\u200b', inline: true},
         { name: "Evidência ausente 1", value:'\u200b', inline: true},
