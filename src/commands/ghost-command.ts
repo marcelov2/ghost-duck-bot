@@ -44,6 +44,7 @@ export class GhostCommand extends BotCommand {
   async exec(message: Message): Promise<any> {
     let args = message.content.split(' ');
     let reply: string | MessageEmbed = 'Você tem que me dizer sobre qual tipo de fantasma que você precisa de informações';
+     message.channel.send("https://i.pinimg.com/originals/aa/9e/16/aa9e16b76f18f327fc14bf79dd09679e.gif");
 
     if(args.length < 2) {
       message.reply('você tem que me dizer que  fantasma você quer ');
