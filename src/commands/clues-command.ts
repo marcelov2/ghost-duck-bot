@@ -40,7 +40,7 @@ export class CluesCommand extends BotCommand {
       message.channel.send('Vá em frente, criatura, receba uma dica (ou melhor, duas) antes de pedir ajuda.  ')
     } else if(args.length === 1) {
       message.channel.send('Bem, apenas uma pista? sou um bot e nao um Xamã.');
-      message.channel.send("https://i.pinimg.com/originals/9f/47/48/9f47487e412947f654b8036666ad0473.gif");
+      message.channel.send("https://4.bp.blogspot.com/-DvM9k9cWfzQ/Vze5o0-QRQI/AAAAAAAAArw/BJSiYEzWWOkX6B50Q25L1ZHvWn2X7VIigCLcB/s640/gifs-assustadores-1.gif");
       this.replyWithoutAdvice(message, args[0]);
     } else {
       this.replyWithAdvice(message, args);
@@ -75,8 +75,7 @@ export class CluesCommand extends BotCommand {
   }
 
   private renderSimpleListEmbed(ghosts: GhostType[], evidences: string[][]): MessageEmbed {
-    message.channel.send("https://4.bp.blogspot.com/-DvM9k9cWfzQ/Vze5o0-QRQI/AAAAAAAAArw/BJSiYEzWWOkX6B50Q25L1ZHvWn2X7VIigCLcB/s640/gifs-assustadores-1.gif");
-    let message = new MessageEmbed().setColor('#666666')
+     let message = new MessageEmbed().setColor('#666666')
           .setTitle('Aqui você tem uma lista do que poderia ser')
           .addFields([
         { name: "Fantasma", value:'\u200b', inline: true},
