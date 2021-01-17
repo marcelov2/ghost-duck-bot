@@ -75,7 +75,7 @@ export class CluesCommand extends BotCommand {
 
   private renderSimpleListEmbed(ghosts: GhostType[], evidences: string[][]): MessageEmbed {
     let message = new MessageEmbed().setColor('#666666')
-      .setTitle('Aqui você tem uma lista do que poderia ser :Dancing:')
+      .setTitle('Aqui você tem uma lista do que poderia ser', ':Dancing:')
       .addFields([
         { name: "Fantasma", value:'\u200b', inline: true},
         { name: "Evidência ausente 0", value:'\u200b', inline: true},
