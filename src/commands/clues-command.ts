@@ -37,7 +37,7 @@ export class CluesCommand extends BotCommand {
     args.shift();
 
     if (args.length === 0) {
-      message.channel.send('Vá em frente, criatura, receba uma dica (ou melhor, duas) antes de pedir ajuda. :blobpoliceangry: ')
+      message.channel.send('Vá em frente, criatura, receba uma dica (ou melhor, duas) antes de pedir ajuda.',' :blobpoliceangry: ')
     } else if(args.length === 1) {
       message.channel.send('Bem, apenas uma pista? sou um bot e nao um Xamã. :476345114613121025: ');
       this.replyWithoutAdvice(message, args[0]);
