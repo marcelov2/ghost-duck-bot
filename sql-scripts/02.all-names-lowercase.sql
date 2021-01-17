@@ -1,13 +1,13 @@
-UPDATE phasmo.ghost_type SET name = 'spirit' WHERE name = 'Spirit';
+UPDATE phasmo.ghost_type SET name = 'espirito' WHERE name = 'Espirito';
 UPDATE phasmo.ghost_type SET name = 'wraith' WHERE name = 'Wraith';
-UPDATE phasmo.ghost_type SET name = 'Phantom' WHERE name = 'Phantom';
+UPDATE phasmo.ghost_type SET name = 'espectro' WHERE name = 'Espectro';
 UPDATE phasmo.ghost_type SET name = 'poltergeist' WHERE name = 'Poltergeist';
 UPDATE phasmo.ghost_type SET name = 'banshee' WHERE name = 'Banshee';
 UPDATE phasmo.ghost_type SET name = 'jinn' WHERE name = 'Jinn';
 UPDATE phasmo.ghost_type SET name = 'mare' WHERE name = 'Mare';
 UPDATE phasmo.ghost_type SET name = 'revenant' WHERE name = 'Revenant';
-UPDATE phasmo.ghost_type SET name = 'shade' WHERE name = 'Shade';
-UPDATE phasmo.ghost_type SET name = 'demon' WHERE name = 'Demon';
+UPDATE phasmo.ghost_type SET name = 'assombração' WHERE name = 'Assombração';
+UPDATE phasmo.ghost_type SET name = 'demonio' WHERE name = 'Demonio';
 UPDATE phasmo.ghost_type SET name = 'yurei' WHERE name = 'Yurei';
 UPDATE phasmo.ghost_type SET name = 'oni' WHERE name = 'Oni';
 
