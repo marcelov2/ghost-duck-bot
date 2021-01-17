@@ -11,7 +11,7 @@ export class CluesCommand extends BotCommand {
   constructor(phasmoDataService: PhasmoDataService) {
     super("evi",
     ["Dado um conjunto de evidências separadas por espaço, direi todos os tipos possíveis de fantasmas com os quais você poderia estar lidando. A evidência pode ser qualquer uma das seguintes, você pode usar seu nome curto (que é mostrado entre parênteses):"],
-    ['clue_list']);
+    ['evi_list']);
 
     this.phasmoDataService = phasmoDataService;
 
