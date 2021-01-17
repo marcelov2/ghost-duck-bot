@@ -100,7 +100,7 @@ export class CluesCommand extends BotCommand {
     let message = new MessageEmbed().setColor('#666666')
       .setTitle('Possiveis Fantasmas')
       .setDescription('Dadas as pistas que você me deu, o fantasma pode ser um dos seguintes:')
-    message.channel.send("https://4.bp.blogspot.com/-DvM9k9cWfzQ/Vze5o0-QRQI/AAAAAAAAArw/BJSiYEzWWOkX6B50Q25L1ZHvWn2X7VIigCLcB/s640/gifs-assustadores-1.gif");
+   
 
     ghosts.forEach((ghost, index) => {
 
