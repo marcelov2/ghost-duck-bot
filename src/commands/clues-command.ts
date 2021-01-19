@@ -8,7 +8,7 @@ export class CluesCommand extends BotCommand {
 
   private readonly phasmoDataService: PhasmoDataService;
 
-  constructor(phasmoDataService: PhasmoDataService) {
+   constructor(phasmoDataService: PhasmoDataService) {
     super("evi",
     ["Dado um conjunto de evidências separadas por espaço, direi todos os tipos possíveis de fantasmas com os quais você poderia estar lidando. A evidência pode ser qualquer uma das seguintes, você pode usar seu nome curto (que é mostrado entre parênteses):"],
     ['evi_list']);
@@ -36,12 +36,25 @@ export class CluesCommand extends BotCommand {
     let args = message.content.split(" ").map((argument) => argument.toLowerCase());
     args.shift();
 
+    const rando_imgs = [
+    'https://media.tenor.com/images/be634a02edeb653f5052fa0456ecae82/tenor.gif',
+    'https://dudafernandes.com/wp-content/uploads/2012/11/anigif_enhanced-buzz-32125-1351371957-11.gif',
+    'https://i.gifer.com/1YIW.gif',
+    'https://i1.wp.com/www.ahoradomedo.com.br/wp-content/uploads/2018/04/giphy.gif?resize=667%2C376&ssl=1',
+    'https://media.giphy.com/media/iLLa1P6ebDJiU/giphy.gif',
+    'https://2.bp.blogspot.com/-KaUYOJgnxzU/VHX5pNf9GBI/AAAAAAAAAco/RPaFEm74R7w/s640/A%2BMorte%2BDo%2BDemonio%2B2013.gif',
+	];
+
+
+    message.channel.send(rando_imgs[Math.floor(Math.random() * rando_imgs.length)]);
+
+
     if (args.length === 0) {
       message.channel.send('Vá em frente, criatura, receba uma dica (ou melhor, duas) antes de pedir ajuda.  ')
     } else if(args.length === 1) {
       message.channel.send('Bem, apenas uma pista? sou um bot e nao um Xamã.');
-      message.channel.send("https://4.bp.blogspot.com/-DvM9k9cWfzQ/Vze5o0-QRQI/AAAAAAAAArw/BJSiYEzWWOkX6B50Q25L1ZHvWn2X7VIigCLcB/s640/gifs-assustadores-1.gif");
       this.replyWithoutAdvice(message, args[0]);
+
     } else {
       this.replyWithAdvice(message, args);
     }
