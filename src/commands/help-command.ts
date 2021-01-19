@@ -11,7 +11,7 @@ export class HelpCommand extends BotCommand {
   private helpText: string;
 
   constructor(commandManager: CommandManager) {
-    super('help', ['Vou te mostrar tudo que posso fazer']);
+    super('ajuda', ['Vou te mostrar tudo que posso fazer']);
     this.commandManager = commandManager;
     this.helpText=''
   }
