@@ -40,16 +40,7 @@ export class CluesCommand extends BotCommand {
       message.channel.send('Vá em frente, criatura, receba uma dica (ou melhor, duas) antes de pedir ajuda.  ')
     } else if(args.length === 1) {
       message.channel.send('Bem, apenas uma pista? sou um bot e nao um Xamã.');
-      message.channel.send(`${message.author} gave ${member} a hug!`, {
-        file: rando_imgs[Math.floor(Math.random() * rando_imgs.length)]
-    });
-
-    const rando_imgs = [
-      'https://media.giphy.com/media/CZpro4AZHs436/giphy.gif',
-      'https://media.giphy.com/media/CZpro4AZHs436/giphy2.gif',
-      'https://media.giphy.com/media/CZpro4AZHs436/giphy3.gif',
-      ]
-      
+      message.channel.send("https://4.bp.blogspot.com/-DvM9k9cWfzQ/Vze5o0-QRQI/AAAAAAAAArw/BJSiYEzWWOkX6B50Q25L1ZHvWn2X7VIigCLcB/s640/gifs-assustadores-1.gif");
       this.replyWithoutAdvice(message, args[0]);
     } else {
       this.replyWithAdvice(message, args);
