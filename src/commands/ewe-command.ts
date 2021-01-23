@@ -5,16 +5,23 @@ import { BotCommand } from "../abstracts/bot-command";
 export class EweCommand extends BotCommand {
 
   constructor()   {
-    super("ewe", [])
+    super("desafio", [])
   }
 
   shouldExec(message: Message): boolean {
-    let matches = message.content.match(/^.*e+[ ]*w+[ ]*e+.*$/i);
-    return  matches !== null
+    return message.content.startsWith(this.name);
   }
 
-  exec(message: Message) : void {
-    message.channel.send("https://www.rajnikantvscidjokes.in/wp-content/uploads/2015/07/841039.gif");
-  }
+  async exec(message: Message): Promise<void> {
+    let args = message.content.split(" ").map((argument) => argument.toLowerCase());
+    args.shift();
 
-};
+    const rando_imgs = [
+    'https://gph.is/g/am1M7kj',
+    'https://gph.is/g/ZWgPVXd',
+	];
+
+
+    message.channel.send(rando_imgs[Math.floor(Math.random() * rando_imgs.length)]);
+  }
+}
