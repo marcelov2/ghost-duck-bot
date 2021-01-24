@@ -19,6 +19,7 @@ export class EweCommand extends BotCommand {
     const rando_imgs = [
     'https://gph.is/g/am1M7kj',
     'https://gph.is/g/ZWgPVXd',
+    'https://gph.is/g/4oW8Wk1',
 	];
 
 
