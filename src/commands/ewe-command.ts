@@ -25,6 +25,9 @@ export class EweCommand extends BotCommand {
     'https://gph.is/g/4bGVD29',
     'https://gph.is/g/4VDbW31',
     'https://gph.is/g/Z7jvoNw',
+    'https://gph.is/g/E0Qvqyo',
+    'https://gph.is/g/apWBmvo',
+    'https://gph.is/g/EGn3PkO',
 
 	    
 	];
@@ -33,4 +36,3 @@ export class EweCommand extends BotCommand {
     message.channel.send(rando_imgs[Math.floor(Math.random() * rando_imgs.length)]);
   }
 }
-
