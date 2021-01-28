@@ -16,13 +16,16 @@ export class AwaCommand extends BotCommand {
     args.shift();
 
     const rando_imgs = [
-    'https://gph.is/g/E3LpyGO',
-    'https://gph.is/g/aeoWg28',
-    'https://gph.is/g/EvWp5gg',
-    'https://gph.is/g/Z5GJXjD',
-    'https://gph.is/g/ZPGqdrd',
-    'https://gph.is/g/EqW0g2x',
-    'https://gph.is/g/aXVLlgP',
+    'https://gph.is/g/aRjB6gO',
+    'https://gph.is/g/aXVQkJR',
+    'https://gph.is/g/apW91QB',
+    'https://gph.is/g/a9RMYeP',
+    'https://gph.is/g/ZPGBgXl',
+    'https://gph.is/g/EGnD7NJ',
+    'https://gph.is/g/4oW9MMK',
+    'https://gph.is/g/a9RMYYJ',
+    
+    
 	];
 
 
