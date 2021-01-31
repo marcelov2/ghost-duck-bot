@@ -17,16 +17,15 @@ export class EweCommand extends BotCommand {
     args.shift();
 
     const rando_imgs = [
-      'https://gph.is/g/E1XMGr3',
-      'https://gph.is/g/4LX8x0L',
-      'https://gph.is/g/Z2KM1yA',
-      'https://gph.is/g/4wW9glD',
-      'https://gph.is/g/EvWnd25',
-      'https://gph.is/g/4oW9wwK',
-      'https://gph.is/g/4gwmB1J',
-      'https://gph.is/g/apW9Vbx',
-      'https://gph.is/g/Z7jMDWw',
-      'https://gph.is/g/E1XMmgR',
+      'https://gph.is/g/ajwG0Vn',
+      'https://gph.is/g/ZPG9MXp',
+      'https://gph.is/g/4bGzr13',
+      'https://gph.is/g/Z8oQmzA',
+      'https://gph.is/g/ZkkdGV8',
+      'https://gph.is/g/4oWAYNe',
+      'https://gph.is/g/aXVzdWA',
+      'https://gph.is/g/4oWAYRD',
+      'https://gph.is/g/aKQOV5q',     
 
 	    
 	];
