@@ -27,7 +27,7 @@ export class EweCommand extends BotCommand {
       'https://gph.is/g/4oWAYRD',
       'https://gph.is/g/aKQOV5q',
       'https://gph.is/g/4wWLVJj',
-      'https://gph.is/g/ZlzjKkY',
+      'https://gph.is/g/ZO0yMDg',
       'https://gph.is/g/ZrWqopd',
       'https://gph.is/g/ZkkdXMB',
       'https://gph.is/g/am1oq9k',
